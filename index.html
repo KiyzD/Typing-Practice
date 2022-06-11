@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Typing Practice</title>
+		<link rel="stylesheet" href="src/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=PT+Mono&display=swap&subset=cyrillic-ext"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<!-- Logo and Results -->
+		<div class="container">
+			<div class="logo">
+				<i class="fas fa-keyboard"></i> Typing Practice
+			</div>
+
+			<!-- Results -->
+			<div class="results">
+				<div class="results-title">Results:</div>
+				<div class="indicators">
+					<div class="indicator">
+						<div class="indicator__icon">
+							<i class="fas fa-tachometer-alt"></i>
+						</div>
+						<div class="indicator__name">Symbols per minute:</div>
+						<div class="indicator__value" id="symbolsPerMinute">0</div>
+					</div>
+
+					<div class="indicator">
+						<div class="indicator__icon indicator__icon--errors">
+							<i class="fas fa-exclamation-circle"></i>
+						</div>
+						<div class="indicator__name">Errors:</div>
+						<div class="indicator__value" id="errorPercent">0%</div>
+					</div>
+				</div>
+			</div>
+			<!-- // Results -->
+		</div>
+		<!-- // Logo and Results -->
+
+		<div class="devider"></div>
+
+		<div class="container">
+			<!-- Input field -->
+			<form action="">
+				<input
+					id="input"
+					type="text"
+					class="input unselectable"
+					placeholder="Tex fields"
+					value="Much of today's business is"
+				/>
+			</form>
+			<!-- // Input field -->
+
+			<!-- Text -->
+			<!-- <div class="text error"> -->
+			<div class="text" id="textExample">
+				<div>
+					<div class="line line-1">
+						<span class="done"> Much of today's business is</span>
+						<span class="hint">c</span>onducted across international borders
+					</div>
+					<div class="line">
+						and while the majority of the global business community
+					</div>
+					<div class="line">
+					might share the use of
+					</div>
+				</div>
+			</div>
+
+			<!-- // Text  -->
+
+			<!-- Keyboard -->
+			<div class="keyboard">
+				<div class="line">
+					<div id="letter_ё" data-letters = "``">``</div>
+					<div id="letter_1" data-letters = "1">1</div>
+					<div id="letter_2" data-letters = "2">2</div>
+					<div id="letter_3" data-letters = "3">3</div>
+					<div id="letter_4" data-letters = "4">4</div>
+					<div id="letter_5" data-letters = "5">5</div>
+					<div id="letter_6" data-letters = "6">6</div>
+					<div id="letter_7" data-letters = "7">7</div>
+					<div id="letter_8" data-letters = "8">8</div>
+					<div id="letter_9" data-letters = "9">9</div>
+					<div id="letter_0" data-letters = "0">0</div>
+					<div id="letter_minus" data-letters = "-">-</div>
+					<div id="letter_plus" data-letters = "+">+</div>
+					<div class="backspace" id="letter_backspace" data-spec = "backspace">Backspace</div>
+				</div>
+				<div class="line">
+					<div class="tab" id="letter_tab" data-spec = "tab">Tab</div>
+					<div id="letter_q" data-letters = "Qq">Q</div>
+					<div id="letter_w" data-letters = "Ww">W</div>
+					<div id="letter_e" data-letters = "Ee">E</div>
+					<div id="letter_r" data-letters = "Rr">R</div>
+					<div id="letter_t" data-letters = "Tt">T</div>
+					<div id="letter_y" data-letters = "Yy">Y</div>
+					<div id="letter_u" data-letters = "Uu">U</div>
+					<div id="letter_i" data-letters = "Ii">I</div>
+					<div id="letter_o" data-letters = "Oo">O</div>
+					<div id="letter_p" data-letters = "Pp">P</div>
+					<div id="letter_brackets1" data-letters = "[">[</div>
+					<div id="letter_brackets2" data-letters = "]">]</div>
+					<div id="letter_slash" data-letters = "\">\</div>
+				</div>
+				<div class="line">
+					<div class="caps" id="letter_capslock" data-spec = "capslock">Caps Lock</div>
+					<div id="letter_a" data-letters = "Aa">A</div>
+					<div id="letter_s" data-letters = "Ss">S</div>
+					<div id="letter_d" data-letters = "Dd">D</div>
+					<div id="letter_f" data-letters = "Ff">F</div>
+					<div id="letter_g" data-letters = "Gg">G</div>
+					<div id="letter_h" data-letters = "Hh">H</div>
+					<div id="letter_j" data-letters = "Jj">J</div>
+					<div id="letter_k" data-letters = "Kk">K</div>
+					<div id="letter_l" data-letters = "Ll">L</div>
+					<div id="letter_semicolon" data-letters = ";">;</div>
+					<div id="letter_quote" data-letters = "''">''</div>
+					<div class="enter" id="letter_enter" data-spec = "enter">Enter</div>
+				</div>
+				<div class="line">
+					<div class="shift" data-spec = "shift">Shift</div>
+					<div id="letter_z" data-letters = "Zz">Z</div>
+					<div id="letter_x" data-letters = "Xx">X</div>
+					<div id="letter_c" data-letters = "Cc">C</div>
+					<div id="letter_v" data-letters = "Vv">V</div>
+					<div id="letter_b" data-letters = "Bb">B</div>
+					<div id="letter_n" data-letters = "Nn">N</div>
+					<div id="letter_m" data-letters = "Mm">M</div>
+					<div id="letter_comma" data-letters = ",">,</div>
+					<div id="letter_point" data-letters = ".">.</div>
+					<div class="shift" data-spec = "shift">Shift</div>
+				</div>
+				<div class="line">
+					<div class="space" id="letter_space" data-spec = "space"></div>
+					<div class="alt" id="letter_alt" data-spec = "alt">Alt</div>
+				</div>
+			</div>
+			<!-- // Keyboard -->
+		</div>
+
+		<script src="src/script.js"></script>
+	</body>
+</html>
